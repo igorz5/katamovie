@@ -34,7 +34,7 @@ export default class MovieCard extends React.PureComponent<MovieCardProps> {
           </div>
           <div className="movie-card__body">
             <p className="movie-card__description">
-              {truncateText(data.description, 100, "...")}
+              {truncateText(data.description, 130, "...")}
             </p>
           </div>
         </div>

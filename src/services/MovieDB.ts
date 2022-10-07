@@ -34,11 +34,18 @@ export default class MovieDB {
     query: string,
     page = 1
   ): Promise<{ movies: IMovie[]; total: number }> {
+    if (query.length === 0) {
+      return { movies: [], total: 0 };
+    }
+
     const data = await request<SearchMoviesData>(
       `${this.baseUrl}/search/movie?api_key=${this.apiKey}&query=${query}&page=${page}`
     );
 
     const total = data.total_results;
+    if (total === 0) {
+      throw new Error("Not found");
+    }
 
     const movies: IMovie[] = data.results.map((res) => ({
       id: res.id,
