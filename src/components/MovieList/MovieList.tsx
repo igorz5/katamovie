@@ -10,7 +10,7 @@ interface MovieListProps {
 }
 
 export default class MovieList extends React.PureComponent<MovieListProps> {
-  render() {
+  render(): React.ReactNode {
     const { movies } = this.props;
     return (
       <ul className="movie-list">

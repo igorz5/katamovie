@@ -10,7 +10,7 @@ interface MovieCardProps {
 }
 
 export default class MovieCard extends React.PureComponent<MovieCardProps> {
-  render() {
+  render(): React.ReactNode {
     const { data } = this.props;
     return (
       <div className="movie-card">

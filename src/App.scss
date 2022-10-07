@@ -2,6 +2,13 @@
   &__container {
     background-color: var(--white);
     max-width: 1010px;
+    min-height: 100vh;
     margin: 0 auto;
+  }
+
+  &__status {
+    display: flex;
+    justify-content: center;
+    padding-top: 16px;
   }
 }

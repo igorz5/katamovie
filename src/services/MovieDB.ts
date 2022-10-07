@@ -13,7 +13,10 @@ interface SearchMoviesData {
   }[];
 }
 
-const request = async <T>(url: string, config: RequestInit = {}) => {
+const request = async <T>(
+  url: string,
+  config: RequestInit = {}
+): Promise<T> => {
   const res = await fetch(url, config);
   if (!res.ok) {
     throw Error(res.statusText);
