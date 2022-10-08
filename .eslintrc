@@ -40,6 +40,7 @@
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/lines-between-class-members": "off",
     "@typescript-eslint/explicit-function-return-type": "warn",
+    "no-console": ["warn", { "allow": ["error"] }],
     "react/static-property-placement": "off",
     "react/self-closing-comp": "off",
     "react/react-in-jsx-scope": "off",

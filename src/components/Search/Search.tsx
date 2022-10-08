@@ -16,7 +16,7 @@ export default class Search extends React.PureComponent<
   SearchProps,
   SearchState
 > {
-  static defaultProps: SearchProps = {
+  static defaultProps: Partial<SearchProps> = {
     className: "",
     placeholder: "",
     onChange: () => {},

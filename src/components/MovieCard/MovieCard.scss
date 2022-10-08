@@ -1,11 +1,15 @@
 .movie-card {
+  position: relative;
   width: 454px;
   min-height: 281px;
   display: flex;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
 
   &__poster {
-    max-width: 100%;
+    height: 100%;
+  }
+
+  &__poster-img {
     height: 100%;
     object-fit: cover;
   }
@@ -15,6 +19,9 @@
   }
 
   &__right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 60%;
     padding: 10px 20px;
   }
@@ -24,6 +31,7 @@
     font-weight: normal;
     line-height: 28px;
     margin-bottom: 7px;
+    width: 80%;
   }
 
   &__date {
@@ -39,7 +47,7 @@
     margin-bottom: 3px;
   }
 
-  &__genre-item {
+  &__genres-item {
     border: 1px solid var(--border-color);
     background-color: var(--white);
     color: var(--genre-color);
@@ -47,6 +55,8 @@
     padding: 1px 4px;
     margin-right: 8px;
     margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 15px;
 
     &:last-child {
       margin-right: 0;
@@ -57,5 +67,60 @@
     font-size: 12px;
     line-height: 22px;
     color: var(--text-primary);
+  }
+
+  &__average-rating {
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    top: 0;
+    right: 0;
+    margin: 8px;
+    font-size: 12px;
+    color: var(--text-primary);
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    .ant-rate {
+      font-size: 13px;
+    }
+  }
+
+  @media screen and (max-width: 944px) {
+    &__left {
+      position: absolute;
+      width: 60px;
+      height: 91px;
+      margin: 6px 10px;
+      top: 0;
+      left: 0;
+    }
+
+    &__right {
+      width: 100%;
+      padding: 6px 10px;
+    }
+
+    &__header {
+      width: 100%;
+      padding-left: 73px;
+      margin-bottom: 10px;
+      min-height: 91px;
+    }
+
+    &__footer {
+      margin-left: auto;
+    }
   }
 }
